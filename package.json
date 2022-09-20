@@ -1,0 +1,22 @@
+{
+  "name": "dizzy-plus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "bench": "DEBUG=Eleventy:Benchmark* eleventy",
+    "watch": "eleventy --watch",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=* eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "2.0.0-canary.15",
+    "cssnano": "^5.1.13",
+    "postcss": "^8.4.16",
+    "postcss-preset-env": "^7.8.2"
+  }
+}
