@@ -1,0 +1,6 @@
+{
+  "emmet.includeLanguages": {
+    "liquid": "html"
+  },
+  "liquid.format.enable": true
+}

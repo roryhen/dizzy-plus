@@ -1,6 +1,5 @@
 const postcss = require('postcss')
 const postcssPresetEnv = require('postcss-preset-env')
-const postcssImport = require('postcss-import')
 const cssnano = require('cssnano')
 
 // PostCSS config setup
