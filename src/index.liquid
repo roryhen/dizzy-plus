@@ -3,12 +3,35 @@ layout: theme.liquid
 title: Dizzy Plus
 ---
 
-<section></section>
+<section>
+  <ul class="carousel">
+    {% for index in (1..5) %}
+      <li>
+        <a href="">
+          <img src="/img/andor-carousel.png" alt="" width="1257" height="517">
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
 
 <section class="categories">
-  {% include 'tile', title: 'Dizzy', image: 'https://static.wikia.nocookie.net/logopedia/images/9/9d/Disney_White.svg' %}
+  <ul class="list">
+    {% for index in (1..5) %}
+      <li>
+        {% include 'tile', title: 'Dizzy', image: 'https://static.wikia.nocookie.net/logopedia/images/9/9d/Disney_White.svg', category: true, width: 200, height: 150 %}
+      </li>
+    {% endfor %}
+  </ul>
 </section>
 
 <section>
-  {% include 'tile', title: 'My Card', image: 'https://placeimg.com/248/140/people' %}
+  <h2>Recommended For You</h2>
+  <ul class="list">
+    {% for index in (1..5) %}
+      <li>
+        {% include 'tile', title: 'My Card', image: 'https://placebear.com/300/170', width: 300, height: 170 %}
+      </li>
+    {% endfor %}
+  </ul>
 </section>

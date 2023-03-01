@@ -14,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0-canary.15",
-    "cssnano": "^5.1.13",
-    "postcss": "^8.4.16",
-    "postcss-preset-env": "^7.8.2"
+    "@11ty/eleventy": "2.0.0",
+    "@11ty/eleventy-plugin-webc": "^0.9.1",
+    "browserslist": "^4.21.5",
+    "lightningcss": "^1.19.0"
   }
 }

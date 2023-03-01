@@ -1,0 +1,19 @@
+.tile {
+  display: flex;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  width: 300px;
+  border-radius: var(--radius-2);
+  overflow: hidden;
+  background: var(--gradient-1);
+  align-items: center;
+}
+
+.category {
+  border: 0.25rem solid var(--med-gray);
+}
+
+.show img {
+  width: 100%;
+  height: auto;
+}

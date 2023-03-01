@@ -1,33 +1,24 @@
-const postcss = require('postcss')
-const postcssPresetEnv = require('postcss-preset-env')
-const cssnano = require('cssnano')
+const pluginWebc = require('@11ty/eleventy-plugin-webc')
+const browserslist = require('browserslist')
+const css = require('lightningcss')
 
-// PostCSS config setup
-const postcssPlugins = [
-  postcssPresetEnv({
-    features: {
-      'custom-media-queries': true,
-      'has-pseudo-class': true,
-      'media-query-ranges': true,
-      'nesting-rules': true,
-    },
-  }),
-  cssnano({ preset: 'default' }),
-]
+let targets = css.browserslistToTargets(browserslist('>= 0.25%'))
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(pluginWebc)
   eleventyConfig.addPassthroughCopy('src/img')
-  eleventyConfig.addTemplateFormats('pcss')
-  eleventyConfig.addExtension('pcss', {
-    outputFileExtension: 'css',
-    compile: async (inputContent) => {
-      const result = await postcss(postcssPlugins)
-        .process(inputContent)
-        .then((output) => output)
 
-      return async () => {
-        return result.css
+  eleventyConfig.addTemplateFormats('css')
+  eleventyConfig.addExtension('css', {
+    outputFileExtension: 'css',
+    compile: (inputContent, inputPath) => {
+      return () => {
+        let result = css.bundle({
+          filename: inputPath,
+          minify: true,
+        })
+        return result.code
       }
     },
   })

@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="../css/tile.css">
 
 <a href="{{ slug }}">
-  <article class="tile">
+  <article class="tile{% if category %} category{% else %} show{% endif %}">
     <h3 class="sr-only">{{ title }}
     </h3>
-    <img src="{{ image }}" alt="{{ title }}" width="320" height="180">
+    <img src="{{ image }}" alt="{{ title }}" width="{{ width }}" height="{{ height }}">
   </article>
 </a>
